@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import {PasscodeGenerator} from "../components/PasscodeGenerator"
 
 export default function Home() {
   return (
@@ -7,8 +8,7 @@ export default function Home() {
         <title>C&S Homestay Lock Number Generator</title>
       </Head>
       <div className="container max-w-[1200px] mx-auto">
-        
-      C&S Homestay
+        <PasscodeGenerator/>
       </div>
     </div>
   )
