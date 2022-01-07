@@ -69,7 +69,6 @@ export const PasscodeGenerator = () => {
     },[randomPasscode])
 
     const handleSetPasscodeList = (data) => {
-        console.log("why are you here")
         setPasscodeList([data,...passcodeList])
         setBtnDisabled(false)
     }
