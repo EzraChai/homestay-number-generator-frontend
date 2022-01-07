@@ -50,7 +50,7 @@ export const PasscodeGenerator = () => {
                 setRandomPasscode(data)
             })
             socket.emit("initMessageFromClient", (res) => {
-                if(res.data.length == 0){
+                if(res.data.length === 0){
                    setBtnDisabled(false)
                 }
                 for (let i = 0; i < res.data.length;i++ ){
@@ -69,6 +69,7 @@ export const PasscodeGenerator = () => {
     },[randomPasscode])
 
     const handleSetPasscodeList = (data) => {
+        console.log("why are you here")
         setPasscodeList([data,...passcodeList])
         setBtnDisabled(false)
     }
