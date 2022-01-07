@@ -42,6 +42,7 @@ export const PasscodeGenerator = () => {
         console.log(btnDisabled)
 
         if(socket){
+            setBtnDisabled(true)
             socket.on("messageFromServer",(res) => {
                 const data = {
                         passcode: res.passcode,
