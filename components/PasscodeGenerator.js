@@ -40,17 +40,14 @@ export const PasscodeGenerator = () => {
 
         if(socket){
             socket.on("messageFromServer",(data) => {
-                console.log("object")
                 setRandomPasscode(data)
             })
             socket.emit("initMessageFromClient", (res) => {
-                console.log(res.data.length)
                 for (let i = 0; i < res.data.length;i++ ){
                     const data = {
                         passcode: res.data[i].number_generated,
                         date: new Date(res.data[i].date_created).toDateString()
                     }
-                    // console.log(res.data[i])
                     setRandomPasscode(data)
                 }
             })
@@ -62,7 +59,6 @@ export const PasscodeGenerator = () => {
     },[randomPasscode])
 
     const handleSetPasscodeList = (data) => {
-        console.log(data)
         setPasscodeList([data,...passcodeList])
     }
 
