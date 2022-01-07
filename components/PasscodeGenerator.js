@@ -84,7 +84,7 @@ export const PasscodeGenerator = () => {
                 ))}
            </div>
            <div className="mt-20">
-             <button onClick={handleGenerator} disabled={btnDisabled} className="absolute bottom-8 right-8 btn btn-primary md:text-xl px-4">Generate</button>
+             <button onClick={handleGenerator} disabled={true} className="absolute bottom-8 right-8 btn btn-primary md:text-xl px-4">Generate</button>
            </div>
         </div>
     )
