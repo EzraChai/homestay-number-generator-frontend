@@ -42,9 +42,14 @@ export const PasscodeGenerator = () => {
 
         if(socket){
             socket.on("messageFromServer",(data) => {
+                const data = {
+                        passcode: res.data[i].number_generated,
+                        date: new Date(res.data[i].date_created).toDateString()
+                    }
                 setRandomPasscode(data)
             })
             socket.emit("initMessageFromClient", (res) => {
+                setBtnDisabled(true)
                 for (let i = 0; i < res.data.length;i++ ){
                     const data = {
                         passcode: res.data[i].number_generated,
