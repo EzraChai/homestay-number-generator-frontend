@@ -45,7 +45,7 @@ export const PasscodeGenerator = () => {
                 console.log(res)
                 const data = {
                         passcode: res.number_generated,
-                        date: new Date(res.date_created).toDateString()
+                        date: new Date().toDateString()
                     }
                 setRandomPasscode(data)
             })
