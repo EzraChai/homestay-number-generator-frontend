@@ -31,7 +31,7 @@ export const PasscodeGenerator = () => {
     const socket = useSocket("https://cshomestay-passcode-backend.herokuapp.com/")
     const [passcodeList, setPasscodeList] = useState([])
     const [randomPasscode,setRandomPasscode] = useState(null)
-    const [btnDisabled,setBtnDisabled] = useState(false)
+    const [btnDisabled,setBtnDisabled] = useState(true)
 
     const handleGenerator = () => {
         setBtnDisabled(true)
@@ -49,7 +49,6 @@ export const PasscodeGenerator = () => {
                 setRandomPasscode(data)
             })
             socket.emit("initMessageFromClient", (res) => {
-                setBtnDisabled(true)
                 for (let i = 0; i < res.data.length;i++ ){
                     const data = {
                         passcode: res.data[i].number_generated,
