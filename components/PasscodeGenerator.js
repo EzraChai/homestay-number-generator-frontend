@@ -39,10 +39,10 @@ export const PasscodeGenerator = () => {
     }
 
     useEffect(() => {
+        console.log(btnDisabled)
 
         if(socket){
             socket.on("messageFromServer",(res) => {
-                console.log(res)
                 const data = {
                         passcode: res.passcode,
                         date: new Date().toDateString()
