@@ -78,8 +78,8 @@ export const PasscodeGenerator = () => {
            <h3 className="mt-2 md:mt-4 text-2xl md:text-4xl font-semibold"> <span className="font-bold text-5xl md:text-6xl text-accent">Passcode</span> Generator</h3>
            <div className="absolute top-[6rem] md:top-[7rem] mt-10 w-[92.5%] h-[350px] overflow-y-auto">
                {passcodeList.map((passcode,index) => (
-                   <div  className="mb-3">
-                        <Passcode key={index} passcode={passcode.passcode} date={passcode.date}/>
+                   <div className="mb-3" key={index}>
+                        <Passcode passcode={passcode.passcode} date={passcode.date}/>
                         {index === 0 && <div className="divider w-[90%]"></div>}
                    </div>
                 ))}
