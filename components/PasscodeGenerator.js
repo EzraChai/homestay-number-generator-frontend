@@ -31,8 +31,10 @@ export const PasscodeGenerator = () => {
     const socket = useSocket("https://cshomestay-passcode-backend.herokuapp.com/")
     const [passcodeList, setPasscodeList] = useState([])
     const [randomPasscode,setRandomPasscode] = useState(null)
+    const [btnDisabled,setBtnDisabled] = useState(false)
 
     const handleGenerator = () => {
+        setBtnDisabled(true)
         if(socket)socket.emit("messageToServer")
     }
 
@@ -60,6 +62,7 @@ export const PasscodeGenerator = () => {
 
     const handleSetPasscodeList = (data) => {
         setPasscodeList([data,...passcodeList])
+        setBtnDisabled(false)
     }
 
     return (
@@ -71,7 +74,7 @@ export const PasscodeGenerator = () => {
                 ))}
            </div>
            <div className="mt-20">
-             <button onClick={handleGenerator} className="absolute bottom-8 right-8 btn btn-primary md:text-xl px-4">Generate</button>
+             <button onClick={handleGenerator} disabled={btnDisabled} className="absolute bottom-8 right-8 btn btn-primary md:text-xl px-4">Generate</button>
            </div>
         </div>
     )
