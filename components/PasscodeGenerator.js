@@ -50,6 +50,9 @@ export const PasscodeGenerator = () => {
                 setRandomPasscode(data)
             })
             socket.emit("initMessageFromClient", (res) => {
+                if(res.data.length == 0){
+                   setBtnDisabled(false)
+                }
                 for (let i = 0; i < res.data.length;i++ ){
                     const data = {
                         passcode: res.data[i].number_generated,
@@ -63,11 +66,11 @@ export const PasscodeGenerator = () => {
 
     useEffect(() => {
         if(randomPasscode)handleSetPasscodeList(randomPasscode)
-        setBtnDisabled(false)
     },[randomPasscode])
 
     const handleSetPasscodeList = (data) => {
         setPasscodeList([data,...passcodeList])
+        setBtnDisabled(false)
     }
 
     return (
