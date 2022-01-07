@@ -41,11 +41,11 @@ export const PasscodeGenerator = () => {
     useEffect(() => {
 
         if(socket){
-            socket.on("messageFromServer",(data) => {
-                console.log(data)
+            socket.on("messageFromServer",(res) => {
+                console.log(res)
                 const data = {
-                        passcode: data.number_generated,
-                        date: new Date(data.date_created).toDateString()
+                        passcode: res.number_generated,
+                        date: new Date(res.date_created).toDateString()
                     }
                 setRandomPasscode(data)
             })
