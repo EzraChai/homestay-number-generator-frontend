@@ -1,11 +1,21 @@
 import Head from 'next/head'
 import {PasscodeGenerator} from "../components/PasscodeGenerator"
 
+const APP_DESCRIPTION = 'PWA app for C&S Homestay to generate Passcode effectively'
+
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>C&S Homestay Lock Number Generator</title>
+        <title>C&S Homestay Passcode Generator</title>
+        <meta name='application-name' content={"C&S Homestay Passcode Generator"} />
+          <meta name='apple-mobile-web-app-capable' content='yes' />
+          <meta name='apple-mobile-web-app-status-bar-style' content='default' />
+          <meta name='apple-mobile-web-app-title' content={"C&S Homestay Passcode Generator"} />
+          <meta name='description' content={APP_DESCRIPTION} />
+          <meta name='format-detection' content='telephone=no' />
+          <meta name='mobile-web-app-capable' content='yes' />
+          <meta name='theme-color' content='#FFFFFF' />
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"/>
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png"/>
         <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png"/>
