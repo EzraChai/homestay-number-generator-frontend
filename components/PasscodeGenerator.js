@@ -28,7 +28,7 @@ function useSocket(url) {
 
 export const PasscodeGenerator = () => {
 
-    const socket = useSocket("http://localhost:4000")
+    const socket = useSocket("https://cshomestay-passcode-backend.herokuapp.com/")
     const [passcodeList, setPasscodeList] = useState([])
     const [randomPasscode,setRandomPasscode] = useState(null)
 
