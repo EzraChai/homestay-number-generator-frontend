@@ -42,6 +42,7 @@ export const PasscodeGenerator = () => {
 
         if(socket){
             socket.on("messageFromServer",(data) => {
+                console.log(data)
                 const data = {
                         passcode: data.number_generated,
                         date: new Date(data.date_created).toDateString()
