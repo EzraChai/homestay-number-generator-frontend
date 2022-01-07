@@ -84,9 +84,9 @@ export const PasscodeGenerator = () => {
            </div>
            <div className="mt-20">
                {btnDisabled ?
-             <button onClick={handleGenerator} className="absolute bottom-8 right-8 btn btn-primary md:text-xl px-4 btn-disabled">Generate</button>
+             <button onClick={handleGenerator} disabled={true} className="absolute bottom-8 right-8 btn btn-primary md:text-xl px-4 btn-disabled">Generate</button>
                 :
-             <button onClick={handleGenerator} className="absolute bottom-8 right-8 btn btn-primary md:text-xl px-4">Generate</button>
+             <button onClick={handleGenerator} disabled={false} className="absolute bottom-8 right-8 btn btn-primary md:text-xl px-4">Generate</button>
                }
            </div>
         </div>
