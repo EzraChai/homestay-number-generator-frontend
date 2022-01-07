@@ -62,11 +62,11 @@ export const PasscodeGenerator = () => {
 
     useEffect(() => {
         if(randomPasscode)handleSetPasscodeList(randomPasscode)
+        setBtnDisabled(false)
     },[randomPasscode])
 
     const handleSetPasscodeList = (data) => {
         setPasscodeList([data,...passcodeList])
-        setBtnDisabled(false)
     }
 
     return (
