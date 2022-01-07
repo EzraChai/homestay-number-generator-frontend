@@ -1,6 +1,7 @@
 {
  "name": "CS Homestay Passcode",
 "short_name": "CSHomestay_Passcode",
+"description": "PWA app for C&S Homestay to generate Passcode effectively",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
