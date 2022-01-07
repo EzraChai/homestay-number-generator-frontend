@@ -39,7 +39,6 @@ export const PasscodeGenerator = () => {
     }
 
     useEffect(() => {
-        console.log(btnDisabled)
 
         if(socket){
             setBtnDisabled(true)
@@ -84,7 +83,11 @@ export const PasscodeGenerator = () => {
                 ))}
            </div>
            <div className="mt-20">
-             <button onClick={handleGenerator} disabled={true} className="absolute bottom-8 right-8 btn btn-primary md:text-xl px-4">Generate</button>
+               {btnDisabled ?
+             <button onClick={handleGenerator} className="absolute bottom-8 right-8 btn btn-primary md:text-xl px-4 btn-disabled">Generate</button>
+                :
+             <button onClick={handleGenerator} className="absolute bottom-8 right-8 btn btn-primary md:text-xl px-4">Generate</button>
+               }
            </div>
         </div>
     )
